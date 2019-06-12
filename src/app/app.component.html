@@ -1,3 +1,33 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+  <div class="jumbotron">  
+  </div>
+</div>
+<h1>Kombucha Taproom</h1><br><br>
+
+
+<h1>Welcome, {{userName}}!</h1>
+
+<form>
+  <input [(ngModel)]="userName" type="text" name="user">
+</form>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h3 [class]="getStatus(currentTask)" *ngFor="let currentTask of kegs">Name: {{currentTask.name}} <br> Brand: {{currentTask.brand}} Price: ${{currentTask.price}} ABV: {{currentTask.ABV}}% Amount: {{currentTask.amount}} pints <br> Available : {{getStatus(currentTask)}} </h3>
+    </div>
+    <div class="col-md-6">
+      <form (submit)="onSubmit()">
+        <input [(ngModel)]="employeePassword" type="text" name="employee">
+        <button class="btn btn-success" [disabled]="!isAuth"></button>
+        <h1 ></h1>
+        <h1 [class]="CheckPassword()">{{employeePassword}} {{isAuth}}</h1>
+    </form>
+
+    </div>
+  </div>
+</div>
+
+
+
