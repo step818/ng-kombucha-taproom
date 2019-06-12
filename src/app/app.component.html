@@ -2,31 +2,40 @@
   <div class="jumbotron">  
   </div>
 </div>
-<h1>Kombucha Taproom</h1><br><br>
-
-
-<h1>Welcome, {{userName}}!</h1>
-
-<form>
-  <input [(ngModel)]="userName" type="text" name="user">
-</form>
-
-
+<h1>Kombucha Taproom</h1><br><br><br>
 <div class="container">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-8">
+      <h2>MENU</h2><br><br>
       <h3 [class]="getStatus(currentTask)" *ngFor="let currentTask of kegs">Name: {{currentTask.name}} <br> Brand: {{currentTask.brand}} Price: ${{currentTask.price}} ABV: {{currentTask.ABV}}% Amount: {{currentTask.amount}} pints <br> Available : {{getStatus(currentTask)}} </h3>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
       <form (submit)="onSubmit()">
-        <input [(ngModel)]="employeePassword" type="text" name="employee">
-        <button class="btn btn-success" [disabled]="!isAuth"></button>
-        <h1 ></h1>
-        <h1 [class]="CheckPassword()">{{employeePassword}} {{isAuth}}</h1>
+        <h2>EMPLOYEE</h2><br><br>
+        <input type="checkbox" ng-model="myVar">
+        <h1 [class]="CheckPassword()"></h1>
+        <div ng-show="myVar"> 
+        <h4>Add a new product</h4><br>
+          <label>Enter the name: </label><br>
+          <input type="text" #newName><br><br>
+          <label>Enter the brand: </label><br>
+          <input type="text" #newBrand><br><br>
+          <label>Enter the price: </label><br>
+          <input type="number" #newPrice><br><br>
+          <label>Enter the Alcohol percentage: </label><br>
+          <input type="number" #newABV><br><br>
+          <label>Enter the amount of product: </label><br>
+          <input type="number" #newAmount><br><br><br>
+          <input [(ngModel)]="employeePassword" type="password" name="employee" placeholder="Employee, enter your password..."  maxlength="4" size="30">
+          <button (click)="addKeg(newName.value, newBrand.value, newPrice.value, newABV.value, newAmount.value)" class="btn btn-success" [disabled]="!isAuth">Add</button>
+        <h1 [class]="CheckPassword()"></h1>
+      </div>
     </form>
-
     </div>
   </div>
+</div>
+<div class="footer">
+  <p></p>
 </div>
 
 

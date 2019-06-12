@@ -13,3 +13,16 @@ h1 {
     margin-left: 15%;
     
 }
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #f7dc71;
+    text-align: center;
+}
+
+.container {
+    margin-bottom: 200px;
+}

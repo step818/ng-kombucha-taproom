@@ -36,6 +36,9 @@ export class AppComponent {
   onSubmit() {
     return this.employeePassword;
   }
+  trueB() {
+    return true;
+  }
 
   CheckPassword() {
     if(this.password===this.employeePassword)
@@ -44,6 +47,9 @@ export class AppComponent {
     }
   }
 
+  addKeg(name: string, brand: string, price: number, ABV: number, amount: number) {
+    this.kegs.push(new Keg(name, brand, price, ABV, amount));
+  }
 
 
   selectedKeg = null;
