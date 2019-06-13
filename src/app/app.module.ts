@@ -6,12 +6,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { KegListComponent } from './keg-list/keg-list.component';
 import { NewKegComponent } from './new-keg/new-keg.component';
+import { SellPintComponent } from './sell-pint/sell-pint.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     KegListComponent,
-    NewKegComponent
+    NewKegComponent,
+    SellPintComponent
   ],
   imports: [
     BrowserModule,

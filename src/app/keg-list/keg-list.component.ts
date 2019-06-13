@@ -10,6 +10,10 @@ export class KegListComponent {
   @Input() childKegList: Keg[];
   @Output() clickSender = new EventEmitter();
 
+  editButtonClicked(kegtoEdit: Keg) {
+    this.clickSender.emit(kegtoEdit);
+  }
+
   kegs: Keg[] = [
     new Keg('Watermelon Mint', 'ABC', 5.00, 4.5, 124 ),
     new Keg('Detox', 'HealthCo.', 6.00, 3.4, 0),
@@ -27,6 +31,8 @@ export class KegListComponent {
       return "Yes";
     }
   }
+
+
 
   constructor() { }
 

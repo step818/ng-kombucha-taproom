@@ -1,0 +1,10 @@
+<div *ngIf="childSelectedKeg">
+  <h3>{{childSelectedKeg.amount}}</h3>
+  
+  <h3>Sell pint amount</h3>
+  <label>Enter amount in pints:</label>
+  <h3>{{childSelectedKeg.name}}</h3>
+  <!-- <h2 [class]="sellProduct(deduct.value)"> {{sellProduct(deduct.value,childSelectedKeg)}}</h2> -->
+  <input  type="number" maxlength="4" #deduct>
+  <button (click)="finishedEditing(deduct.value)">Done</button>
+</div>

@@ -6,12 +6,16 @@
 <div class="container">
   <div class="row">
     <app-keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)"></app-keg-list>
-  
-
-
     <app-new-keg (sendKeg)="addKeg($event)"></app-new-keg>
   </div>
+  <div class="row">
+    <div class="col-md-12">
+      <app-sell-pint [childSelectedKeg]="selectedKeg" (clickedDone)="sell($event)"></app-sell-pint>
+      
+    </div>
+  </div>
 </div>
+
 <div class="footer">
   <p></p>
 </div>

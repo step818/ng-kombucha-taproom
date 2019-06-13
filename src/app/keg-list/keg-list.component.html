@@ -1,7 +1,7 @@
     <div class="col-md-8">
       <h2>MENU</h2><br><br>
       <ul>
-        <h3><li [class]="getStatus(currentKeg)" *ngFor="let currentKeg of childKegList">Name: {{currentKeg.name}} <br> Brand: {{currentKeg.brand}} Price: ${{currentKeg.price}} ABV: {{currentKeg.ABV}}% Amount: {{currentKeg.amount}} pints <br> Available : {{getStatus(currentKeg)}}</li></h3>
+        <h3><li [class]="getStatus(currentKeg)" *ngFor="let currentKeg of childKegList"> Name: {{currentKeg.name}} <br> Brand: {{currentKeg.brand}} Price: ${{currentKeg.price}} ABV: {{currentKeg.ABV}}%  <br> Amount: {{currentKeg.amount}} pints <button (click)="editButtonClicked(currentKeg)">Sell!</button> <br> Available : {{getStatus(currentKeg)}} <br><br></li></h3><br>
       </ul>
     </div>
   

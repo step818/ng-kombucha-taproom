@@ -18,8 +18,22 @@ export class AppComponent {
     new Keg('Lemon Strawberry', 'Kombucha Inc.', 4.00, 2.1, 100)
   ];
 
+  editKeg(clickedKeg) {
+    this.selectedKeg = clickedKeg;
+    
+  }
+
+  finishedEditing() {
+    this.selectedKeg = null;
+  }
+
   addKeg(newKeg: Keg) {
     this.masterKegList.push(newKeg);
+  }
+
+  sell(num: number){
+    this.selectedKeg.amount -= num;
+    this.selectedKeg = null;
   }
 
 }
