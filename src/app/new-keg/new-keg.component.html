@@ -1,0 +1,25 @@
+  <div class="col-md-4">
+      <form (submit)="onSubmit()">
+        <h2>EMPLOYEE</h2><br><br>
+
+        <button class="btn btn-info" ng-click="showme=true">Display the form</button> 
+        <button class="btn btn-danger" ng-click="showme=false">Hide the form</button> 
+        
+        <h1 [class]="CheckPassword()"></h1>
+        <div ng-show="showme"> 
+          <label>Enter the name: </label><br>
+          <input type="text" #newName><br><br>
+          <label>Enter the brand: </label><br>
+          <input type="text" #newBrand><br><br>
+          <label>Enter the price: </label><br>
+          <input type="number" #newPrice><br><br>
+          <label>Enter the Alcohol percentage: </label><br>
+          <input type="number" #newABV><br><br>
+          <label>Enter the amount of product: </label><br>
+          <input type="number" #newAmount><br><br><br>
+          <input [(ngModel)]="employeePassword" type="password" name="employee" placeholder="Employee, enter your password..."  maxlength="4" size="30">
+          <button (click)="submitForm(newName.value, newBrand.value, newPrice.value, newABV.value, newAmount.value)" class="btn btn-success" [disabled]="!isAuth">Add</button>
+        <h1 [class]="CheckPassword()"></h1>
+      </div>
+    </form>
+  </div>

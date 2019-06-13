@@ -5,35 +5,11 @@
 <h1>Kombucha Taproom</h1><br><br><br>
 <div class="container">
   <div class="row">
-    <div class="col-md-8">
-      <h2>MENU</h2><br><br>
-      <h3 [class]="getStatus(currentTask)" *ngFor="let currentTask of kegs">Name: {{currentTask.name}} <br> Brand: {{currentTask.brand}} Price: ${{currentTask.price}} ABV: {{currentTask.ABV}}% Amount: {{currentTask.amount}} pints <br> Available : {{getStatus(currentTask)}} </h3>
-    </div>
-    <div class="col-md-4">
-      <form (submit)="onSubmit()">
-        <h2>EMPLOYEE</h2><br><br>
+    <app-keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)"></app-keg-list>
+  
 
-        <button class="btn btn-info" ng-click="showme=true">Display the form</button> 
-        <button class="btn btn-danger" ng-click="showme=false">Hide the form</button> 
-        
-        <h1 [class]="CheckPassword()"></h1>
-        <div ng-show="showme"> 
-          <label>Enter the name: </label><br>
-          <input type="text" #newName><br><br>
-          <label>Enter the brand: </label><br>
-          <input type="text" #newBrand><br><br>
-          <label>Enter the price: </label><br>
-          <input type="number" #newPrice><br><br>
-          <label>Enter the Alcohol percentage: </label><br>
-          <input type="number" #newABV><br><br>
-          <label>Enter the amount of product: </label><br>
-          <input type="number" #newAmount><br><br><br>
-          <input [(ngModel)]="employeePassword" type="password" name="employee" placeholder="Employee, enter your password..."  maxlength="4" size="30">
-          <button (click)="addKeg(newName.value, newBrand.value, newPrice.value, newABV.value, newAmount.value)" class="btn btn-success" [disabled]="!isAuth">Add</button>
-        <h1 [class]="CheckPassword()"></h1>
-      </div>
-    </form>
-    </div>
+
+    <app-new-keg (sendKeg)="addKeg($event)"></app-new-keg>
   </div>
 </div>
 <div class="footer">
