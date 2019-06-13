@@ -12,7 +12,7 @@ export class AppComponent {
   seasonalGreeting: string = 'Refresh this Summer with our quenching selection';
   //List of kegs;
   kegs: Keg[] = [
-    new Keg('Watermelon Mint', 'ABC', 5.00, 4.5, 0 ),
+    new Keg('Watermelon Mint', 'ABC', 5.00, 4.5, 124 ),
     new Keg('Detox', 'HealthCo.', 6.00, 3.4, 0),
     new Keg('Lemon Strawberry', 'Kombucha Inc.', 4.00, 2.1, 100)
   ];

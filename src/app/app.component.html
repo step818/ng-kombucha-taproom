@@ -12,10 +12,12 @@
     <div class="col-md-4">
       <form (submit)="onSubmit()">
         <h2>EMPLOYEE</h2><br><br>
-        <input type="checkbox" ng-model="myVar">
+
+        <button class="btn btn-info" ng-click="showme=true">Display the form</button> 
+        <button class="btn btn-danger" ng-click="showme=false">Hide the form</button> 
+        
         <h1 [class]="CheckPassword()"></h1>
-        <div ng-show="myVar"> 
-        <h4>Add a new product</h4><br>
+        <div ng-show="showme"> 
           <label>Enter the name: </label><br>
           <input type="text" #newName><br><br>
           <label>Enter the brand: </label><br>
